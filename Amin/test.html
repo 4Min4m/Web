@@ -1,0 +1,24 @@
+<html>
+<head></head>
+<body>
+
+<form method="get" action="">
+Name :
+<input type="text" name="name">
+<input type="submit" Value="Save">
+</form>
+<?php
+if(isset($_GET['name']))
+{
+$name=$_GET['name'];
+setcookie("name","$name",time()+60);
+echo "Welcome $name";
+}
+elseif(isset($_COOKIE['name']))
+{
+echo $_COOKIE['name'];
+}
+?>
+
+</body>
+</html>
